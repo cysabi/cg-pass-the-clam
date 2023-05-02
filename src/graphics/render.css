@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Triester Sans";
+  src: url("./Triester-Sans.ttf");
+}
+
+@layer base {
+  html {
+    background-image: url("./bg.png");
+    @apply bg-cover bg-no-repeat font-graphics;
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "cq-graphics-template",
+  "name": "cg-pass-the-clam",
   "version": "0.1.0",
   "scripts": {
     "dev": "vite",
@@ -11,18 +11,24 @@
     "compatibleRange": ">=1.8.1",
     "graphics": [
       {
-        "file": "break.html",
+        "file": "graphics.html",
         "width": 1920,
         "height": 1080
-      },
+      }
+    ],
+    "dashboardPanels": [
       {
-        "file": "game.html",
-        "width": 1920,
-        "height": 1080
+        "name": "Pass The Clam",
+        "title": "Pass The Clam",
+        "fullbleed": true,
+        "file": "dashboard.html"
       }
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@mui/material": "^5.12.2",
     "preact": "^10.12.1"
   },
   "devDependencies": {

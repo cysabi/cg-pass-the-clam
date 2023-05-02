@@ -3,18 +3,15 @@ import { resolve } from "path"
 import preact from "@preact/preset-vite"
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [preact()],
   base: "./",
   build: {
     target: "chrome95",
     sourcemap: true,
-    outDir: "graphics",
+    outDir: mode,
     rollupOptions: {
-      input: {
-        break: resolve(__dirname, "break.html"),
-        game: resolve(__dirname, "game.html"),
-      },
+      input: resolve(__dirname, `${mode}.html`),
     },
   },
-})
+}))
