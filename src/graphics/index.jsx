@@ -4,6 +4,7 @@ import useReplicant from "./replicants"
 import { animate } from "motion"
 import { useEffect, useRef } from "preact/hooks"
 import swatch from "./swatch.png"
+import clam from "./clam.svg"
 
 function App() {
   return (
@@ -32,21 +33,7 @@ const Host = () => {
 
   return (
     <div class="relative w-full max-w-2xl text-white flex flex-col items-center">
-      <svg
-        className="max-w-xl"
-        viewBox="0 0 51.299133 44.07068"
-        version="1.1"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M36.7089 2.26208C35.9065 1.55646 13.4252 2.46729 12.4992 2.75763C0.811096 6.42242 -1.43018 22.2922 7.35016 27.3059C30.6309 40.5994 30.7198 43.765 38.8509 41.3063C57.9992 35.5164 46.8823 11.2092 36.7089 2.26208Z"
-          fill="#39b54a"
-          fillRule="evenodd"
-          stroke="currentColor"
-          strokeWidth="0.5"
-        />
-      </svg>
+      <img src={clam} class="max-w-xl" />
       <div class="relative w-full max-w-xl h-36 flex items-center justify-center -mt-28">
         <img class="absolute w-full max-w-xl h-36" src={swatch} />
         <div
