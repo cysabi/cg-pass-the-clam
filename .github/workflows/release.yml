@@ -20,7 +20,7 @@ jobs:
       - run: npm i
       - run: npx vite build --mode dashboard
       - run: npx vite build --mode graphics
-      - run: zip -r ${{ github.event.repository.name }}.zip graphics package.json LICENSE
+      - run: zip -r ${{ github.event.repository.name }}.zip graphics dashboard package.json LICENSE
       - uses: svenstaro/upload-release-action@v2
         with:
           file: "${{ github.event.repository.name }}.zip"
