@@ -29,6 +29,7 @@
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@mui/material": "^5.12.2",
+    "motion": "^10.15.5",
     "preact": "^10.12.1"
   },
   "devDependencies": {
@@ -36,7 +37,7 @@
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "postcss-preset-env": "^8.0.1",
-    "tailwindcss": "^3.2.7",
+    "tailwindcss": "^3.3.2",
     "vite": "^4.1.4"
   }
 }

@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => ({
   base: "./",
   build: {
     target: "chrome95",
+    emptyOutDir: false,
     sourcemap: true,
     outDir: mode,
     rollupOptions: {
