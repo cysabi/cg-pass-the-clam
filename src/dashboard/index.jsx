@@ -135,7 +135,7 @@ const Block = ({ i }) => {
   }, [sreplicant])
 
   return (
-    <div className="rounded-lg shadow-lg bg-slate-600 p-4 flex flex-col gap-6">
+    <div className="rounded-lg shadow bg-slate-700 p-4 flex flex-col gap-6">
       <div class="flex gap-3 items-baseline">
         <div className="font-bold text-2xl">{name}</div>
         <div className="text-2xl text-slate-400">•</div>

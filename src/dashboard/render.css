@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 body {
-  @apply !font-dashboard;
+  @apply !font-dashboard bg-slate-800;
 }
