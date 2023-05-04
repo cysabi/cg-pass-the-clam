@@ -2,7 +2,7 @@ import { Autocomplete, TextField, createFilterOptions } from "@mui/material"
 import render from "./render"
 import Button from "@mui/material/Button"
 import { ButtonGroup } from "@mui/material"
-import { useCallback, useEffect, useState } from "preact/compat"
+import { useEffect, useState } from "preact/compat"
 import useReplicant from "./useReplicant"
 
 const topics = [
@@ -37,8 +37,12 @@ const Topic = () => {
     defaultValue: "",
   })
   const [topicState, setTopicState] = useState(undefined)
+  const [topicInput, setTopicInput] = useState("")
   useEffect(() => {
-    if (topicState === undefined) setTopicState(topicReplicant)
+    if (topicState === undefined && topicReplicant !== undefined) {
+      setTopicState(topicReplicant)
+      setTopicInput(topicReplicant)
+    }
   }, [topicReplicant])
 
   return (
@@ -51,11 +55,11 @@ const Topic = () => {
         freeSolo
         options={topics}
         value={topicState}
+        inputValue={topicInput}
         InputLabelProps={{ shrink: true }}
         renderInput={(params) => <TextField {...params} label="Topic" />}
-        onChange={(event, newValue) => {
-          setTopicState(newValue)
-        }}
+        onChange={(e, value) => setTopicState(value)}
+        onInputChange={(e, value) => setTopicInput(value)}
         filterOptions={(options, params) => {
           const filtered = filter(options, params)
           const { inputValue } = params
