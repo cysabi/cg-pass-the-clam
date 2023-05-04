@@ -27,7 +27,7 @@ const Host = () => {
 
   return (
     <div class="relative w-full max-w-2xl flex flex-col items-center pt-20 text-white">
-      <img src={clam} class="w-full max-w-2xl" />
+      <img src={clam} class="w-full max-w-[43rem]" />
       <div class="relative w-full max-w-xl h-36 flex items-center justify-center -mt-[7.25rem]">
         <img class="absolute w-full max-w-xl h-36" src={swatch} />
         <div
@@ -35,7 +35,7 @@ const Host = () => {
           class="absolute w-full text-center z-10 text-4xl -translate-y-2"
         ></div>
       </div>
-      <div class="absolute bottom-0 -translate-y-32 translate-x-[6.5rem] left-0 flex justify-between items-center bg-black border-4 gap-5 px-5 py-2 text-2xl text-[1.56rem] -skew-y-3 z-20">
+      <div class="absolute bottom-0 -translate-y-32 translate-x-28 left-0 flex justify-between items-center bg-black border-4 gap-5 px-5 py-2 text-2xl text-[1.56rem] -skew-y-3 z-20">
         <div ref={hostRef}></div>
         <div class="w-[2px] h-8 bg-white" />
         <div>Host</div>
