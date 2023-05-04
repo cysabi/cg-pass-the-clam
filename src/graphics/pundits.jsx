@@ -3,8 +3,6 @@ import nameplate from "./nameplate.png"
 import useReplicant from "./replicants"
 import { animate } from "motion"
 import { useEffect, useRef } from "preact/hooks"
-import swatch from "./swatch.png"
-import clam from "./clam.svg"
 
 function App() {
   return (
@@ -13,38 +11,6 @@ function App() {
         {Array.from({ length: 4 }).map((v, i) => (
           <Contestant key={i} id={i + 1} reverse={i % 2 === 0} />
         ))}
-      </div>
-      <div class="absolute flex items-center justify-center h-full w-full">
-        <Host />
-      </div>
-    </div>
-  )
-}
-
-const Host = () => {
-  const hostRef = useRef()
-  const topicRef = useRef()
-
-  const hostName = useReplicant(`host`, "")
-  const topic = useReplicant(`topic`, "")
-
-  useFadeText(hostRef, hostName)
-  useFadeText(topicRef, topic)
-
-  return (
-    <div class="relative w-full max-w-2xl text-white flex flex-col items-center">
-      <img src={clam} class="max-w-xl" />
-      <div class="relative w-full max-w-xl h-36 flex items-center justify-center -mt-28">
-        <img class="absolute w-full max-w-xl h-36" src={swatch} />
-        <div
-          ref={topicRef}
-          class="absolute w-full text-center text-white z-10 text-4xl -translate-y-2"
-        ></div>
-      </div>
-      <div class="absolute bottom-0 -translate-y-32 translate-x-24 left-0 flex justify-between items-center bg-black text-white border-4 gap-5 px-5 py-2 text-2xl text-[1.56rem] -skew-y-3 z-20">
-        <div ref={hostRef}></div>
-        <div class="w-[2px] h-8 bg-white" />
-        <div>Host</div>
       </div>
     </div>
   )
@@ -75,13 +41,7 @@ const Contestant = ({ id, reverse = false }) => {
 
   return (
     <div class="relative h-full w-full -translate-x-1.5 -translate-y-1.5">
-      <div class="absolute border-4 z-10 border-white h-full w-full">
-        {/* <iframe
-          src="https://www.youtube.com/embed/_hKV9hzKN9c"
-          frameborder="0"
-          class="h-full w-full"
-        ></iframe> */}
-      </div>
+      <div class="absolute border-4 z-10 border-white h-full w-full"></div>
       <div
         class="absolute border-4 border-black h-full w-full translate-x-3 translate-y-3"
         style={{

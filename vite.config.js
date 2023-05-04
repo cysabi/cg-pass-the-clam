@@ -12,7 +12,13 @@ export default defineConfig(({ mode }) => ({
     sourcemap: true,
     outDir: mode,
     rollupOptions: {
-      input: resolve(__dirname, `${mode}.html`),
+      input:
+        mode === "dashboard"
+          ? resolve(__dirname, `${mode}.html`)
+          : {
+              pundits: resolve(__dirname, `pundits.html`),
+              host: resolve(__dirname, `host.html`),
+            },
     },
   },
 }))

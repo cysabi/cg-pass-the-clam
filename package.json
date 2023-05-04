@@ -11,7 +11,12 @@
     "compatibleRange": ">=1.8.1",
     "graphics": [
       {
-        "file": "graphics.html",
+        "file": "host.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "pundits.html",
         "width": 1920,
         "height": 1080
       }
