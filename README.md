@@ -4,11 +4,11 @@
 ![License][license-shield]
 ![Stars][stars-shield]
 
-## Installation
+## usage
 1. Find the version you're looking for on the releases page, and download `cq-pass-the-clam.zip`.
 1. Unzip the file and drag the folder into the `bundles/` subdirectory of your NodeCG installation.
 
-## Running locally
+## local setup
 1. Clone the repository into the `bundles/` subdirectory of your NodeCG installation.
     - If you need a remote server, read: [How to set up a remote NodeCG instance for free](https://gist.github.com/LeptoFlare/70cd494e4562b7473fdb89029a4d6a87)
 1. `npm run watch` will build the bundle for NodeCG and watch for changes.
@@ -19,9 +19,7 @@
 
 ---
 
-Contact me · [**@LeptoFlare**](https://github.com/LeptoFlare) · [lepto.tech](https://lepto.tech)
-
-_[https://github.com/LeptoFlare/cq-pass-the-clam](https://github.com/LeptoFlare/cq-pass-the-clam)_
+[**@cerulepto**](https://github.com/LeptoFlare) • [lepto.tech](https://lepto.tech)
 
 <!-- markdown links & imgs -->
 [stars-shield]: https://img.shields.io/github/stars/LeptoFlare/cq-pass-the-clam.svg?style=social
