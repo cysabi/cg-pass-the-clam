@@ -50,6 +50,7 @@ const Standby = () => {
 }
 
 const dvd = (current, transform, direction, distance, setTopic) => {
+  // who let me cook
   animate(
     current,
     { transform },
