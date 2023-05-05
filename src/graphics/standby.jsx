@@ -1,7 +1,6 @@
 import render from "./render"
-import useReplicant from "./replicants"
 import { animate } from "motion"
-import { useEffect, useRef } from "preact/hooks"
+import { useState, useEffect, useRef } from "preact/hooks"
 import swatch from "./swatch.png"
 import clamStandby from "./clam-standby.svg"
 
@@ -13,11 +12,68 @@ function App() {
   )
 }
 
-const dvd = (current, transform, direction, distance) => {
+const topics = [
+  "Welcome to Pass the Clam",
+  "it's not hitting the corner, trust",
+  "do you feel engaged?",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+  "Welcome to Pass the Clam",
+]
+
+const Standby = () => {
+  const clamRef = useRef()
+
+  const topicRef = useRef()
+  const [topic, setTopic] = useState("Welcome to Pass the Clam")
+  useFadeText(topicRef, topic)
+
+  useEffect(() => {
+    dvd(
+      clamRef.current,
+      "translateX(553px) translateY(553px)",
+      [true, true],
+      553,
+      setTopic
+    )
+  }, [])
+
+  return (
+    <div ref={clamRef}>
+      <img src={clamStandby} />
+
+      <div class="relative w-[38rem] h-[10rem] inset-0 flex items-center justify-center translate-x-[3.5rem] -translate-y-[24rem]">
+        <img class="absolute w-full h-full" src={swatch} />
+        <div
+          ref={topicRef}
+          class="absolute w-full px-8 text-center z-10 text-5xl -translate-y-3"
+        ></div>
+      </div>
+    </div>
+  )
+}
+
+const dvd = (current, transform, direction, distance, setTopic) => {
   animate(
     current,
     { transform },
-    { duration: distance / 300, easing: "linear" }
+    { duration: distance / 200, easing: "linear" }
   ).finished.then(() => {
     const coords = current.style.transform
       .split(" ")
@@ -33,60 +89,19 @@ const dvd = (current, transform, direction, distance) => {
       coords[0] + dist * (direction[0] ? 1 : -1),
       coords[1] + dist * (direction[1] ? 1 : -1),
     ]
-    console.log(direction, coords, trans)
+    setTopic(topics[Math.floor(Math.random() * topics.length)])
     dvd(
       current,
       `translateX(${trans[0]}px) translateY(${trans[1]}px)`,
       direction,
-      dist
+      dist,
+      setTopic
     )
   })
 }
 
 const absMin = function (prev, curr) {
   return Math.abs(curr - 0) < Math.abs(prev - 0) ? curr : prev
-}
-
-const Standby = () => {
-  const clamRef = useRef()
-
-  //   const hostRef = useRef()
-  //   const hostName = useReplicant(`host`, "")
-  //   useFadeText(hostRef, hostName)
-
-  //   const topicRef = useRef()
-  //   const topic = useReplicant(`topic`, "")
-  //   useFadeText(topicRef, topic)
-
-  //   1269
-
-  useEffect(() => {
-    dvd(
-      clamRef.current,
-      "translateX(553px) translateY(553px)",
-      [true, true],
-      553
-    )
-  }, [])
-
-  return (
-    <>
-      <img ref={clamRef} src={clamStandby} />
-
-      {/* <div class="absolute inset-0 flex items-center justify-center">
-        <img class="absolute w-full max-w-xl h-36" src={swatch} />
-        <div
-          ref={topicRef}
-          class="absolute w-full text-center z-10 text-4xl -translate-y-2"
-        ></div>
-      </div> */}
-      {/* <div class="absolute bottom-0 -translate-y-32 translate-x-28 left-0 flex justify-between items-center bg-black border-4 gap-5 px-5 py-2 text-2xl text-[1.56rem] -skew-y-3 z-20">
-        <div ref={hostRef}></div>
-        <div class="w-[2px] h-8 bg-white" />
-        <div>Standby</div>
-      </div> */}
-    </>
-  )
 }
 
 const useFadeText = (ref, state) => {
