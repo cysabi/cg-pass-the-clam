@@ -18,6 +18,7 @@ export default defineConfig(({ mode }) => ({
           : {
               pundits: resolve(__dirname, `pundits.html`),
               host: resolve(__dirname, `host.html`),
+              standby: resolve(__dirname, `standby.html`),
             },
     },
   },
