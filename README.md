@@ -1,8 +1,10 @@
 # `cq-pass-the-clam`
-> A NodeCG graphics bundle.
+> graphics and dashboard controls for InkTV's "Pass the Clam".
 
 ![License][license-shield]
 ![Stars][stars-shield]
+
+> ![Preview](preview.png)
 
 ## usage
 1. Find the version you're looking for on the releases page, and download `cq-pass-the-clam.zip`.
