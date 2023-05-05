@@ -13,35 +13,15 @@ function App() {
 }
 
 const topics = [
-  "Welcome to Pass the Clam",
+  ...Array.from({ length: 20 }).map(() => "Pass the Clam"),
   "it's not hitting the corner, trust",
-  "do you feel engaged?",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
-  "Welcome to Pass the Clam",
 ]
 
 const Standby = () => {
   const clamRef = useRef()
 
   const topicRef = useRef()
-  const [topic, setTopic] = useState("Welcome to Pass the Clam")
+  const [topic, setTopic] = useState("Pass the Clam")
   useFadeText(topicRef, topic)
 
   useEffect(() => {
@@ -58,11 +38,11 @@ const Standby = () => {
     <div ref={clamRef}>
       <img src={clamStandby} />
 
-      <div class="relative w-[38rem] h-[10rem] inset-0 flex items-center justify-center translate-x-[3.5rem] -translate-y-[24rem]">
+      <div class="relative w-[38rem] h-[10rem] inset-0 flex items-center justify-center rotate-6 translate-x-[3.5rem] -translate-y-[24rem]">
         <img class="absolute w-full h-full" src={swatch} />
         <div
           ref={topicRef}
-          class="absolute w-full px-8 text-center z-10 text-5xl -translate-y-3"
+          class="absolute w-full px-8 text-center z-10 text-5xl -rotate-1 -translate-y-3"
         ></div>
       </div>
     </div>
