@@ -1,9 +1,6 @@
 # `cq-pass-the-clam`
 > graphics and dashboard controls for InkTV's "Pass the Clam".
 
-![License][license-shield]
-![Stars][stars-shield]
-
 > ![Preview](preview.png)
 
 ## usage
@@ -21,8 +18,4 @@
 
 ---
 
-[**@cerulepto**](https://github.com/LeptoFlare) • [lepto.tech](https://lepto.tech)
-
-<!-- markdown links & imgs -->
-[stars-shield]: https://img.shields.io/github/stars/LeptoFlare/cq-pass-the-clam.svg?style=social
-[license-shield]: https://img.shields.io/github/license/LeptoFlare/cq-pass-the-clam.svg?style=flat
+*empathy included • [**@cysabi**](https://github.com/cysabi) • [cysabi.github.io](https://cysabi.github.io)*
